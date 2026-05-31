@@ -7,3 +7,4 @@ print("nos vemos")
 print("ramiro hace algo loco, no haces nada")
 for i in range(3):
     print("chau", i)
+print("hasta luego", i)
