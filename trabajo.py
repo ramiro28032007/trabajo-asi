@@ -1,3 +1,3 @@
 print('hola')
 print('chau')
-print("El Ramiro no hace nada y nos borra todo")
+print("El ramiro es el unico que hace las cosas por dios encima es el mas lindo ")
