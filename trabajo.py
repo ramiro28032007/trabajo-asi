@@ -4,3 +4,4 @@ for i in range(5):
     print("hola", i)
 print("adios")
 print("nos vemos")
+print("ramiro hace algo loco, no haces nada")
