@@ -1,3 +1,6 @@
 print('hoola')
 print("estoy?")
-print("estoy al lado")
+for i in range(5):
+    print("hola", i)
+print("adios")
+print("nos vemos")
