@@ -1,1 +1,37 @@
+Requerimientos (del cliente + posibles requerimientos):
 
+* Qué plataforma
+
+* Plazo de retiro
+
+* Comunicación con los servidores-proveedores del retiro
+
+* Lugares (qué ofrecen, qué no. Si son para hombres, mujeres o mixtos. Actividades a realizar. Clima)
+
+* Cronograma de actividades e intensidad o suavidad de las mismas
+
+* Descripción de objetivos o satisfacciones del retiro
+
+* Precios y formas de pago. Gastos en el retiro
+
+* Agenda o registro de pagos
+
+* Comentarios/reseñas (propias o de la comunidad)
+
+* Políticas de cancelación 
+
+* Cantidad de personas en las actividades y/o estadía, grupos.
+
+* Nivel de privacidad y atención
+
+* Ubicación
+
+* Notificaciones y recordatorios de actividades, cronogramas
+
+* Buscador de retiros registrados con filtro
+
+* Posibilidad de hacer reviews 
+
+* Agendar acompañante/s por retiro
+
+* App móvil
