@@ -1,3 +1,1 @@
-print('hola')
-print('chau')
 
