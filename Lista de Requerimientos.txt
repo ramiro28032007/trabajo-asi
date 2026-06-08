@@ -59,3 +59,32 @@ Sitios web para encontrar retiros espirituales/holísticos o citas de personas b
     - info adicional
     - politica de cancelacion
 * https://www.reddit.com/r/GoingToSpain/comments/1km6cb1/health_and_wellness_retreat_recommendations/
+
+Gestion de cupos y Capacidad
+- Controlar cantidad maxima de participantes
+- Mostrar cupos disponibles
+- Cerrar inscripciones automaticamente al llenarse
+ fuente: https://es.slideshare.net/slideshow/requerimientos-funcionales-de-un-sistema-de-reservas/40702688
+
+Calendario de Retiros
+- Mostrar fechas disponibles
+- Permitir filtrar por mes/temporada
+- Visualizar cronogramas
+fuente: https://es.slideshare.net/slideshow/requerimientos-funcionales-de-un-sistema-de-reservas/40702688?utm_source
+
+Historial de retiros realizados
+El usuario podra:
+- Consultar los retiros realizados anteriormente
+- Ver feedbacks anteriores
+- Descargar comprobamtes
+fuente: https://www.studocu.com/co/document/sena-sofiaplus/adso/requisitos-funcionales-del-sistema-de-reservas-hoteleras/132407544?utm_source=chatgpt.com
+
+Integracion con aplicaciones externas
+El  podra intregarse con:
+- Google Calendar
+- WhatsApp
+- Redes Sociales
+- Pasarelas de pago
+fuente: 
+https://www.soytecca.com/blog/como-integrar-whatsapp-google-calendar?utm_source
+https://www.mercadopago.com.ar/developers/es/docs/checkout-api-orders/overview   
