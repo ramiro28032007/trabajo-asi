@@ -35,3 +35,27 @@ Requerimientos (del cliente + posibles requerimientos):
 * Agendar acompañante/s por retiro
 
 * App móvil
+
+Sitios web para encontrar retiros espirituales/holísticos o citas de personas buscandolos
+* https://inspyria.com/ar
+  * Métodos de búsqueda (filtros):
+    - Dónde ir:
+    Cerca de []; Países []
+            
+    - “Qué te inspira?”:
+    Crecimiento personal, Meditación, Detox, Yoga, Bienestar, Tantra, Vacaciones, Silencio, Formación.
+            
+    - Especiales:
+    Solo hombres, Solo mujeres, Midfulness (espacio de inmersión para desconectar de la rutina/estrés, sesiones de meditación, silencio intencionado, movimiento consciente como yoga o caminatas meditativas, enseñanzas y reflexión), Parejas.
+            
+    - Entrada/salida (plazo):
+    Elegir un mes particular o un plazo específico
+            
+    - Calificación y comentarios de los usuarios
+    - Tipos de yoga, tipos de meditación, nivel, posibilidad de mascotas o animales
+    - Fotos del lugar y las actividades
+    - Tipo de alimentación
+    - programa (horarios)
+    - info adicional
+    - politica de cancelacion
+* https://www.reddit.com/r/GoingToSpain/comments/1km6cb1/health_and_wellness_retreat_recommendations/
