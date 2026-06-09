@@ -64,20 +64,23 @@ Gestion de cupos y Capacidad
 - Controlar cantidad maxima de participantes
 - Mostrar cupos disponibles
 - Cerrar inscripciones automaticamente al llenarse
- fuente: https://es.slideshare.net/slideshow/requerimientos-funcionales-de-un-sistema-de-reservas/40702688
+ fuente: 
+https://www.meetup.com/es-ES/?utm_source
 
 Calendario de Retiros
 - Mostrar fechas disponibles
 - Permitir filtrar por mes/temporada
 - Visualizar cronogramas
-fuente: https://es.slideshare.net/slideshow/requerimientos-funcionales-de-un-sistema-de-reservas/40702688?utm_source
+fuente:
+https://bookretreats.com/?utm_source
 
 Historial de retiros realizados
 El usuario podra:
 - Consultar los retiros realizados anteriormente
 - Ver feedbacks anteriores
 - Descargar comprobamtes
-fuente: https://es.slideshare.net/slideshow/requerimientos-funcionales-de-un-sistema-de-reservas/40702688?utm_source
+fuente: 
+https://www.axispms.com/?utm_source
 
 Integracion con aplicaciones externas
 El  podra intregarse con:
@@ -86,6 +89,5 @@ El  podra intregarse con:
 - Redes Sociales
 - Pasarelas de pago
 fuente: 
-https://www.soytecca.com/blog/como-integrar-whatsapp-google-calendar?utm_source
-https://www.mercadopago.com.ar/developers/es/docs/checkout-api-orders/overview   
-https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fruna.espacioderetiros%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn2hmf7UBPoU7ly4NTJRFMBKA7gVbWwGtwmYjtFOMf4IenyGM9msnC132fFhs_aem_Xb__xJQul7GP1WjUp3Ijag&e=AUD0KTUJ7ZfloqX1-6JfWHwPcU97aaz3mf1EoWbhzzlKgu-AXYWUBYgagPYVUVJqb1Lg5bit20IpwAJ8i-FjUS_ZUrxzt1lsacqwY7XvDQ98HEZZx2u-lUkyQ7OcbU3HNaxHVpg
+https://inturno.com
+https://l.instagram.com/?
