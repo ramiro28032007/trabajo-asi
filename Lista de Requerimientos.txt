@@ -43,7 +43,7 @@ Sitios web para encontrar retiros espirituales/holísticos o citas de personas b
     Cerca de []; Países []
             
     - “Qué te inspira?”:
-    Crecimiento personal, Meditación, Detox, Yoga, Bienestar, Tantra, Vacaciones, Silencio, Formación.
+    Crecimiento personal o espiritual, Meditación, Detox, Yoga, Bienestar, Tantra, Vacaciones, Silencio, Formación.
             
     - Especiales:
     Solo hombres, Solo mujeres, Midfulness (espacio de inmersión para desconectar de la rutina/estrés, sesiones de meditación, silencio intencionado, movimiento consciente como yoga o caminatas meditativas, enseñanzas y reflexión), Parejas.
