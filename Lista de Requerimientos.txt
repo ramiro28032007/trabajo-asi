@@ -77,7 +77,7 @@ El usuario podra:
 - Consultar los retiros realizados anteriormente
 - Ver feedbacks anteriores
 - Descargar comprobamtes
-fuente: https://www.studocu.com/co/document/sena-sofiaplus/adso/requisitos-funcionales-del-sistema-de-reservas-hoteleras/132407544?utm_source=chatgpt.com
+fuente: https://es.slideshare.net/slideshow/requerimientos-funcionales-de-un-sistema-de-reservas/40702688?utm_source
 
 Integracion con aplicaciones externas
 El  podra intregarse con:
