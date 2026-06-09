@@ -36,7 +36,7 @@ Requerimientos (del cliente + posibles requerimientos):
 
 * App móvil
 
-Sitios web para encontrar retiros espirituales/holísticos o citas de personas buscandolos
+Sitios web/redes sociales para encontrar retiros espirituales/holísticos o citas de personas buscandolos
 * https://inspyria.com/ar
   * Métodos de búsqueda (filtros):
     - Dónde ir:
