@@ -30,6 +30,8 @@ Requerimientos (del cliente + posibles requerimientos):
 
 * Buscador de retiros registrados con filtro
 
+* Posibilidad de realizar aportes o donaciones voluntarias para colaborar con el retiro.
+
 * Posibilidad de hacer reviews 
 
 * Agendar acompañante/s por retiro
@@ -91,3 +93,7 @@ El  podra intregarse con:
 fuente: 
 https://inturno.com
 https://l.instagram.com/?
+
+Posibilidad de realizar aportes o donaciones voluntarias para colaborar con el retiro.
+Fuente: Requerimiento identificado a partir de una entrevista informal realizada a una familiar
+-Durante la conversación se mencionó que muchos retiros son gratuitos y suelen sostenerse mediante contribuciones voluntarias de los participantes para cubrir gastos de organización, mantenimiento de instalaciones y desarrollo de actividades.
