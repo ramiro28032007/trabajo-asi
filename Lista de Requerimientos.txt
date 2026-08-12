@@ -1,6 +1,6 @@
 LISTA DE REQUERIMIENTOS DEL CLIENTE
 
-Alcance del sistema
+ALCANCE DEL SISTEMA:
 El sistema sera una agenda personal de retiros la cual permitira que el usuario registre manualmente los retiros grupales hechos y por hacer, organizar su informacion, consultar cronogramas y recibir recordatorios.
 El sistema solo permitira la informacion  registrada por el usuario ymantendra la informacion cargada de forma privada.
 
