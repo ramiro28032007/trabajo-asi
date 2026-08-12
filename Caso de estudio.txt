@@ -1,5 +1,4 @@
 CASO DE ESTUDIO [propuesta]
-
 El cliente solicita un sistema para gestionar una agenda personal de retiros espirituales u holísticos, permitiendo registrar los retiros realizados y aquellos que tiene previsto realizar. El sistema será una herramienta para registrar manualmente los retiros de interés del usuario junto con toda la información relevante de cada uno, como el nombre, una breve descripción, los datos de contacto, las fechas disponibles, la duración, la ubicación geográfica, los servicios ofrecidos, las actividades, el tipo de público (hombres, mujeres o mixto), el clima esperado, los precios, las formas de pago, las políticas de cancelación, el nivel de privacidad, el nivel de atención y demás detalles relacionados con el retiro.
 
 Los retiros registrados deberán ser únicamente de modalidad grupal. El sistema será desarrollado como una aplicación móvil y contará con un sistema de notificaciones que mantendrá al usuario informado sobre los próximos retiros registrados en su agenda. Además, permitirá consultar los cronogramas y recibir recordatorios relacionados con las actividades y horarios de cada retiro.
