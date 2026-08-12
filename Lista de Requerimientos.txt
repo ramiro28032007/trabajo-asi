@@ -1,4 +1,4 @@
-Requerimientos (del cliente + posibles requerimientos):
+Requerimientos (del cliente + posibles requerimientos) [Boceto]
 
 * Agenda de retiros
 
@@ -97,3 +97,53 @@ https://l.instagram.com/?
 Posibilidad de realizar aportes o donaciones voluntarias para colaborar con el retiro.
 Fuente: Requerimiento identificado a partir de una entrevista informal realizada a una familiar
 -Durante la conversación se mencionó que muchos retiros son gratuitos y suelen sostenerse mediante contribuciones voluntarias de los participantes para cubrir gastos de organización, mantenimiento de instalaciones y desarrollo de actividades.
+
+LISTA DE REQUERIMIENTOS [y correcciones]
+Gestión de retiros
+1 El sistema deberá registrar retiros espirituales u holísticos.
+2 El sistema deberá almacenar una descripción de cada retiro.
+3 El sistema deberá almacenar la ubicación de cada retiro.
+4 El sistema deberá registrar las fechas de inicio y finalización de cada retiro.
+5 El sistema deberá registrar el cronograma de actividades de cada retiro.
+6 El sistema deberá registrar el nivel de intensidad de las actividades.
+7 El sistema deberá almacenar los objetivos y beneficios asociados a cada retiro.
+8 El sistema deberá registrar las políticas de cancelación de cada retiro.
+9 El sistema deberá almacenar fotografías de los lugares y actividades.
+10 El sistema deberá registrar información sobre alojamiento, alimentación y servicios ofrecidos.
+11 El sistema deberá indicar si un retiro está orientado a hombres, mujeres, parejas o grupos mixtos.
+12 El sistema deberá indicar si un retiro es individual o grupal.
+13 El sistema deberá registrar el nivel de privacidad y atención ofrecido por cada retiro.
+Búsqueda y consulta
+14 El sistema deberá permitir la búsqueda de retiros registrados.
+15 El sistema deberá permitir filtrar retiros por ubicación.
+16 El sistema deberá permitir filtrar retiros por país.
+17 El sistema deberá permitir filtrar retiros por temática o interés (meditación, yoga, bienestar, crecimiento personal, etc.).
+18 El sistema deberá permitir filtrar retiros por fechas o período de realización.
+19 El sistema deberá permitir filtrar retiros por tipo de público (hombres, mujeres, parejas, mixtos).
+20 El sistema deberá permitir filtrar retiros por calificación promedio.
+21 El sistema deberá permitir filtrar retiros por tipo de alimentación.
+22 El sistema deberá permitir filtrar retiros por aceptación de mascotas.
+23 El sistema deberá mostrar el detalle completo de un retiro seleccionado.
+Pagos
+24 El sistema deberá registrar los precios de los retiros.
+25 El sistema deberá registrar las formas de pago disponibles.
+26 El sistema deberá almacenar una agenda de pagos.
+Notificaciones
+27 El sistema deberá enviar recordatorios sobre las reservas registradas.
+28 El sistema deberá enviar recordatorios de actividades programadas.
+29 El sistema deberá enviar recordatorios sobre los pagos por hacer.
+Opiniones de la comunidad
+30 El sistema deberá permitir que los usuarios registren reseñas de retiros.
+31 El sistema deberá permitir consultar reseñas realizadas por otros usuarios.
+32 El sistema deberá calcular y mostrar calificaciones promedio de los retiros.
+Integraciones
+33 El sistema deberá integrarse con Google Calendar para registrar actividades y eventos.
+34 El sistema deberá integrarse con WhatsApp para el envío de comunicaciones.
+35 El sistema deberá disponer de una aplicación móvil para usuarios.
+
+CORRECCIONES
+Requerimientos del 2 al 13: tienen que integrarse a un solo 'Registrar retiro' ya que todos los atributos que se especifican ahi se cargan cuando registras un retiro nuevo. Tambien se requiere poder modificar y eliminar retiros cargados.
+Requerimientos del 14 al 22: se tienen que integrar a uno o dos requerimientos que sean sobre la busqueda de retiros y el filtro por atributos. Dejar claro que la busqueda/consulta se hace a los retiros que ya han sido registrados por el usuario.
+Requerimiento 22: Quitarlo o escribir en el CASO DE ESTUDIO que el cliente quiere que los retiros se puedan diferenciar por la aceptación de animales.
+Requerimientos 24 y 25: son atributos de cada retiro, se integran en el requerimiento 1
+Revisar la seccion "Opiniones de la comunidad": El sistema es offline, de uso personal, no pueden verse comentarios y opiniones de otras personas. Reformular todo eso para que se entienda que el usuario puede anotar en cada retiro, opiniones leidas de otras personas o algun puntaje promedio.

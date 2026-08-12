@@ -1,5 +1,30 @@
-CASO DE ESTUDIO
+CASO DE ESTUDIO [propuesta]
+
+El cliente solicita un sistema para gestionar una agenda personal de retiros espirituales u holísticos, permitiendo registrar los retiros realizados y aquellos que tiene previsto realizar. El sistema será una herramienta para registrar manualmente los retiros de interés del usuario junto con toda la información relevante de cada uno, como el nombre, una breve descripción, los datos de contacto, las fechas disponibles, la duración, la ubicación geográfica, los servicios ofrecidos, las actividades, el tipo de público (hombres, mujeres o mixto), el clima esperado, los precios, las formas de pago, las políticas de cancelación, el nivel de privacidad, el nivel de atención y demás detalles relacionados con el retiro.
+
+Los retiros registrados deberán ser únicamente de modalidad grupal. El sistema será desarrollado como una aplicación móvil y contará con un sistema de notificaciones que mantendrá al usuario informado sobre los próximos retiros registrados en su agenda. Además, permitirá consultar los cronogramas y recibir recordatorios relacionados con las actividades y horarios de cada retiro.
+
+La aplicación contará con un buscador que permitirá al usuario localizar retiros dentro de los que tiene registrados en su propia agenda. Este buscador podrá utilizar filtros basados en la información almacenada, como fechas, duración, ubicación, precio, tipo de público, nivel de privacidad, nivel de atención y servicios ofrecidos. Si no se aplica ningún filtro, el sistema podrá mostrar los retiros registrados de manera aleatoria.
+
+También será de utilidad contar con una herramienta de feedback que permita al usuario registrar sus propias opiniones, comentarios y puntuaciones sobre los retiros que haya realizado. Estas valoraciones serán de carácter personal y podrán utilizarse para recordar la experiencia del usuario respecto de aspectos como la calidad, el trato recibido y las actividades realizadas. El sistema permitirá consultar estas valoraciones junto con la información del retiro correspondiente.
+
+
+
+CASO DE ESTUDIO [Boceto]
 	El cliente solicita un sistema que gestione retiros espirituales u holísticos, que registre una agenda con los retiros realizados y por realizar. El sistema debe ser una herramienta para registrar manualmente los retiros, el contacto de los mismos, los plazos disponibles (fechas y duraciónes), lugar geográfico, qué servicios ofrecen, actividades, tipo para hombres, mujeres o mixto, clima esperado, precios, políticas de cancelación y demás los detalles del mismo.
 	Se solicita que los retiros sean unicamente grupales, que sea una app móvil y que tenga notificaciónes que mantengan al cliente informado sobre próximos retiros, además de mantenerlo al tanto de los cronogramas del mismo. El cliente tambien necesita discriminar los retiros en función del nivel de privacidad y atención prestada.
 	Es importante una breve descripción de cada retiro para que el usuario sepa acerca de las actividades que allí se realizarán. Además de poseer un buscador que se pueda optimizar con filtros, para poder encontrar el que más le convenga. De no aplicarse ningún filtro, el buscador mostrará los retiros registrados aleatoriamente.
 	También es de utilidad para el cliente tener la herramienta de feedback, para dejar reseñas y comentarios (propios o ajenos) sobre retiros realizados o no, para tener una idea de qué tan buena es la calidad, el trato, las actividades, etc., antes de ir. Un estilo de puntuación resulta útil.
+
+
+CASO DE ESTUDIO [Documento con correcciones]
+    1*El cliente solicita una herramienta que le ayude a encontrar organizaciones que ofrecen retiros espirituales u holísticos*, un sistema que gestione retiros, registre una agenda con los retiros realizados y por realizar. El sistema debe ser una herramienta para registrar manualmente los retiros, el contacto de los mismos, los plazos disponibles (fechas y duraciones), lugar geográfico, qué servicios ofrecen, actividades, tipo para hombres, mujeres o mixto, clima esperado, precios, políticas de cancelación y demás detalles del mismo.
+    2*Se solicita que los retiros sean únicamente grupales, que sea una app móvil* y que tenga notificaciones que mantengan al cliente informado sobre próximos retiros, además de mantenerlo al tanto de los cronogramas del mismo. 3*El cliente también necesita discriminar los retiros en función del nivel de privacidad y atención prestada.*
+    Es importante una breve descripción de cada retiro para que el usuario sepa acerca de las actividades que allí se realizan. Además de poseer un buscador que se pueda optimizar con filtros, para poder encontrar el que más le convenga. De no aplicarse ningún filtro, el buscador mostrará los retiros registrados aleatoriamente.
+    4*También es de utilidad para el cliente tener la herramienta de feedback, para dejar reseñas y comentarios (propios o ajenos) sobre retiros realizados o no, para tener una idea de qué tan buena es la calidad, el trato, las actividades, etc., antes de ir.* Un estilo de puntuación resulta útil.
+
+CORRECCIONES:
+1: La app no debe servir para "buscar organizaciones de retiros", sino que el usuario es el que carga en la app los retiros que ya conoce. En todo caso, en la app puede buscar las organizaciones/retiros que cargó y registró previamente.
+2: El mismo usuario es el que registra los retiros en la app y registra los que quiera, es innecesario especificar que sean o no grupales en el enunciado. Lo de que sea una app móvil está bien.
+3: Tiene que quedar claro que nos referimos a que el sistema es el que otorga ese tipo de caracteristicas a la hora de registrar un retiro. Osea, el usuario especifica el nivel de privacidad y atención en el retiro y después el sistema le muestra esa información como atributos del retiro.
+4: Repensar esa explicacion, teniendo en cuenta que es una app offline, solo tiene todo lo que el usuario registra. El usuario podría ver los numeros de calificacion y opiniones generales de la gente y escribir algun resumen o promedio en los retiros que registre. por ejemplo: "la gente tiene opiniones positivas sobre este retiro porque...".
