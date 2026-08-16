@@ -1,4 +1,4 @@
-CASO DE ESTUDIO [boceto 1]
+CASO DE ESTUDIO
 El cliente solicita un sistema que administrar retiros espirituales u holísticos, y que ofrezca una agenda con los retiros realizados y por realizar. El sistema debe ser una herramienta para registrar, modificar y eliminar manualmente los retiros, el contacto de los mismos, los plazos disponibles (fechas y duración), lugar geográfico, qué servicios ofrecen, su nivel de privacidad y atención prestada, actividades, tipo para hombres, mujeres o mixto, grupales o individuales, clima esperado, precios, políticas de cancelación y una descripción del retiro para que el usuario sepa acerca de las actividades que allí se realizarán.
 Se solicita que sea una app móvil y que tenga notificaciones que mantengan al cliente informado sobre los retiros programados, además de mantenerlo al tanto de los cronogramas del mismo.
 Se propone también un buscador de retiros registrados que se pueda optimizar con filtros, para poder encontrar el que más le convenga al usuario. De no aplicarse ningún filtro, el buscador mostrará la lista aleatoriamente.
@@ -6,23 +6,4 @@ También es de utilidad para el cliente la posibilidad de agregar a cada retiro 
 Por último, el sistema contará con un apartado para consultar los gastos asociados a cada retiro, permitiendo visualizar los gastos totales y los gastos realizados mensualmente.
 
 
-CASO DE ESTUDIO [Documento entrega 1]
-    1*El cliente solicita una herramienta que le ayude a encontrar organizaciones que ofrecen retiros espirituales u holísticos*, un sistema que gestione retiros, registre una agenda con los retiros realizados y por realizar. El sistema debe ser una herramienta para registrar manualmente los retiros, el contacto de los mismos, los plazos disponibles (fechas y duraciones), lugar geográfico, qué servicios ofrecen, actividades, tipo para hombres, mujeres o mixto, clima esperado, precios, políticas de cancelación y demás detalles del mismo.
-    2*Se solicita que los retiros sean únicamente grupales, que sea una app móvil* y que tenga notificaciones que mantengan al cliente informado sobre próximos retiros, además de mantenerlo al tanto de los cronogramas del mismo. 3*El cliente también necesita discriminar los retiros en función del nivel de privacidad y atención prestada.*
-    Es importante una breve descripción de cada retiro para que el usuario sepa acerca de las actividades que allí se realizan. Además de poseer un buscador que se pueda optimizar con filtros, para poder encontrar el que más le convenga. De no aplicarse ningún filtro, el buscador mostrará los retiros registrados aleatoriamente.
-    4*También es de utilidad para el cliente tener la herramienta de feedback, para dejar reseñas y comentarios (propios o ajenos) sobre retiros realizados o no, para tener una idea de qué tan buena es la calidad, el trato, las actividades, etc., antes de ir.* Un estilo de puntuación resulta útil.
-
-CORRECCIONES:
-1: La app no debe servir para "buscar organizaciones de retiros", sino que el usuario es el que carga en la app los retiros que ya conoce. En todo caso, en la app puede buscar las organizaciones/retiros que cargó y registró previamente.
-2: El mismo usuario es el que registra los retiros en la app y registra los que quiera, es innecesario especificar que sean o no grupales en el enunciado. Lo de que sea una app móvil está bien.
-3: Tiene que quedar claro que nos referimos a que el sistema es el que otorga ese tipo de caracteristicas a la hora de registrar un retiro. Osea, el usuario especifica el nivel de privacidad y atención en el retiro y después el sistema le muestra esa información como atributos del retiro.
-4: Repensar esa explicacion, teniendo en cuenta que es una app offline, solo tiene todo lo que el usuario registra. El usuario podría ver los numeros de calificacion y opiniones generales de la gente y escribir algun resumen o promedio en los retiros que registre. por ejemplo: "la gente tiene opiniones positivas sobre este retiro porque ...".
-
-
-
-CASO DE ESTUDIO [boceto 2]
-	El cliente solicita un sistema que administrar retiros espirituales u holísticos, y que ofrezca una agenda con los retiros realizados y por realizar. El sistema debe ser una herramienta para registrar, modificar y eliminar manualmente los retiros, el contacto de los mismos, los plazos disponibles (fechas y duración), lugar geográfico, qué servicios ofrecen, su nivel de privacidad y atención prestada, actividades, tipo para hombres, mujeres o mixto, grupales o individuales, clima esperado, precios, políticas de cancelación y una descripción del retiro para que el usuario sepa acerca de las actividades que allí se realizarán.
-	Se solicita que sea una app móvil y que tenga notificaciones que mantengan al cliente informado sobre los retiros programados, además de mantenerlo al tanto de los cronogramas del mismo.
-	Se propone también un buscador de retiros registrados que se pueda optimizar con filtros, para poder encontrar el que más le convenga al usuario. De no aplicarse ningún filtro, el buscador mostrará la lista aleatoriamente.
-	También es de utilidad para el cliente la posibilidad de agregar a cada retiro un breve comentario adicional y una puntuación (basándose en la experiencia propia u opiniones de la gente en internet)
 
