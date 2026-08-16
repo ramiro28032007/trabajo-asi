@@ -29,6 +29,10 @@ RF1 -- Registrar Retiro
 -Descripcion general
 -comentario adicional
 -Puntuación.
+-Forma de pago.
+-Fechas disponibles.
+-Reseñas u opiniones.
+-Gastos asociados
 
 RF2 -- Modificar retiro 
 El sistena debe permitir modificar la informacion de un retiro.
@@ -55,6 +59,40 @@ RF -- El sistema debe ofrecer al usuario agendar un retiro y cargarlo en la agen
 RF -- Visualizacion del calendario de retiros
 El sistema debe mostrar los retiros registrados en un calendario.
 
+RF -- Modificar agenda
+El sistema debe permitir modificar la información de los retiros registrados en la agenda.
+
+RF -- Eliminar retiro de la agenda
+El sistema debe permitir quitar un retiro de la agenda.
+
 NOTIFICACIONES
 RF -- El sistema debe notificar al usuario antes de el inicio de cada retiro programado y también de sus actividades.
 
+RF -- Configurar notificaciones
+El sistema debe permitir al usuario configurar los recordatorios de los retiros y sus actividades.
+
+RF -- Notificar actividades
+El sistema debe notificar al usuario antes del inicio de las actividades programadas de un retiro.
+
+RESEÑAS Y PUNTUACIONES
+RF -- Registrar reseña
+El sistema debe permitir al usuario registrar una reseña, comentario u opinión asociada a un retiro.
+
+RF -- Consultar reseñas
+El sistema debe permitir consultar todas las reseñas y opiniones registradas sobre los retiros.
+
+RF -- Registrar puntuación
+El sistema debe permitir al usuario asignar una puntuación a un retiro.
+
+GESTIÓN DE GASTOS
+RF -- Registrar gasto
+El sistema debe permitir registrar gastos asociados a un retiro.
+
+RF -- Consultar gastos
+El sistema debe permitir consultar los gastos asociados a un retiro.
+
+RF -- Consultar gastos totales
+El sistema debe mostrar el total de gastos de un retiro.
+
+RF -- Consultar gastos mensuales
+El sistema debe permitir consultar los gastos de un retiro organizados por mes.
