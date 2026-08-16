@@ -1,38 +1,34 @@
 LISTA DE REQUERIMIENTOS DEL CLIENTE
 
-ALCANCE DEL SISTEMA:
+Alcance del sistema
 El sistema sera una agenda personal de retiros la cual permitira que el usuario registre manualmente los retiros grupales hechos y por hacer, organizar su informacion, consultar cronogramas y recibir recordatorios.
 El sistema solo permitira la informacion  registrada por el usuario ymantendra la informacion cargada de forma privada.
 
 Requerimientos funcionales(RF)
-GESTION DE RETIROS
+
 RF1 -- Registrar Retiro
+El sistema debera permitir al usuario registrar de forma manual un retiro con la siguiente informacion:
+
 -Nombre.
--Contacto del organizador.
+-Descripción.
+-Objetivos o beneficios esperados.
 -Fecha de inicio.
+-Fecha de finalización.
 -Duración.
--Disponibilidad.
 -Estado: por realizar o realizado.
--Ubicación geográfica.
--fotos de los lugares y ubicaciones
+-Lugar y ubicación geográfica.
+-Clima esperado.
+-Datos de contacto del organizador.
+-Público destinatario: hombres, mujeres o mixto.
+-Actividades ofrecidas.
+-Intensidad de las actividades.
+-Cronograma.
 -Servicios incluidos y no incluidos.
+-Precio.
+-Forma de pago.
+-Política de cancelación.
 -Nivel de privacidad.
 -Nivel de atención.
--Cronograma de actividades ofrecidas.
--Intensidad de las actividades.
--Objetivos o beneficios esperados.
--Público destinatario: hombres, mujeres o mixto.
--Cantidad de personas: grupal o individual.
--Clima esperado
--Precio.
--Política de cancelación.
--Descripcion general
--comentario adicional
--Puntuación.
--Forma de pago.
--Fechas disponibles.
--Reseñas u opiniones.
--Gastos asociados
 
 RF2 -- Modificar retiro 
 El sistena debe permitir modificar la informacion de un retiro.
@@ -43,56 +39,100 @@ El sistema debe permitir eliminar un retiro registrado.
 RF4 -- Consultar retiro
 El sistema debe permitir consultar toda la información registrada de un retiro.
 
-BUSQUEDA
-RF -- Busqueda de retiro
-El sistema debe permitir buscar los retiros registrados
+RF -- Busqueda y filtro de retiros registrados
+El sistema debe permitir buscar y filtrar únicamente los retiros registrados por el usuario.
 
-RF -- filtrar la busqueda de retiros registrados
-El sistema debe poder filtrar la búsqueda de retiros mediante uno o más atributos.
+Los filtros podrán aplicarse por:
 
-RF -- busqueda sin filtros
-Si no se aplican filtros, el sistema debe permitir ordenar los retiros registrados aleatoriamente o con los más recientes primero 
+-Nombre.
+-Fecha o periodo.
+-Ubicación.
+-Público destinatario.
+-Precio.
+-Nivel de privacidad.
+-Nivel de atención.
+-Estado: realizado o por realizar.
 
-AGENDA
-RF -- El sistema debe ofrecer al usuario agendar un retiro y cargarlo en la agenda.
+Si no se aplica ningún filtro, el sistema debe mostrar todos los retiros registrados.
 
-RF -- Visualizacion del calendario de retiros
-El sistema debe mostrar los retiros registrados en un calendario.
+RF6 -- Visualizacion del calendario de retiros
+El sistema debe permitir visualizar los retiros registrados en un calendario, diferenciando los retiros realizados de los retiros por realizar.
+También debe permitir consultar los retiros correspondientes a un mes o periodo determinado.
 
-RF -- Modificar agenda
-El sistema debe permitir modificar la información de los retiros registrados en la agenda.
+RF7 -- Gestionar cronograma de actividades
+El sistema debe permitir registrar, modificar, eliminar y consultar las actividades correspondientes de retiro.
 
-RF -- Eliminar retiro de la agenda
-El sistema debe permitir quitar un retiro de la agenda.
+Para cada actividad se debe poder indicar:
 
-NOTIFICACIONES
-RF -- El sistema debe notificar al usuario antes de el inicio de cada retiro programado y también de sus actividades.
+-Nombre o descripción.
+-Fecha.
+-Horario de inicio.
+-Horario de finalización.
+-Nivel de intensidad.
 
-RF -- Configurar notificaciones
-El sistema debe permitir al usuario configurar los recordatorios de los retiros y sus actividades.
+RF8 -- Configurar notificaciones y recordatorios
+El sistema debe permitir configurar notificaciones y recordatorios relacionados con:
 
-RF -- Notificar actividades
-El sistema debe notificar al usuario antes del inicio de las actividades programadas de un retiro.
+-Próximos retiros.
+-Inicio y finalización de actividades.
+-Modificaciones en el cronograma.
+-Fechas previstas de pago.
+-Otras fechas importantes registradas por el usuario.
 
-RESEÑAS Y PUNTUACIONES
-RF -- Registrar reseña
-El sistema debe permitir al usuario registrar una reseña, comentario u opinión asociada a un retiro.
+RF9 -- Registrar pagos
+El sistema debe permitir registrar los pagos previstos y realizados a cada retiro.
 
-RF -- Consultar reseñas
-El sistema debe permitir consultar todas las reseñas y opiniones registradas sobre los retiros.
+Para cada pago se deberá indicar:
 
-RF -- Registrar puntuación
-El sistema debe permitir al usuario asignar una puntuación a un retiro.
+-Concepto.
+-Monto.
+-Fecha prevista.
+-Fecha de realización.
+-Forma de pago.
+-Estado: pendiente o pagado.
 
-GESTIÓN DE GASTOS
-RF -- Registrar gasto
-El sistema debe permitir registrar gastos asociados a un retiro.
+RF10 -– Registrar gastos, aportes y donaciones
 
-RF -- Consultar gastos
-El sistema debe permitir consultar los gastos asociados a un retiro.
+El sistema debe permitir registrar los gastos personales, aportes y donaciones voluntarias relacionados con un retiro.
 
-RF -- Consultar gastos totales
-El sistema debe mostrar el total de gastos de un retiro.
+Para cada movimiento se debe indicar:
 
-RF -- Consultar gastos mensuales
-El sistema debe permitir consultar los gastos de un retiro organizados por mes.
+-Concepto.
+-Monto.
+-Fecha.
+-Tipo de movimiento: gasto, aporte o donación.
+-Forma de pago.
+
+RF11 –- Gestionar comprobantes
+El sistema debe permitir adjuntar, consultar y descargar comprobantes asociados con pagos, gastos, aportes o donaciones registrados.
+
+RF12 -– Gestionar acompañantes
+El sistema debe permitir registrar, modificar, eliminar y consultar los acompañantes asociados con cada retiro.
+
+RF13 –- Registrar valoración personal
+El sistema debe permitir que el usuario registre una puntuación, un comentario y observaciones personales sobre un retiro realizado.
+En los retiros pendientes, el usuario podrá registrar notas personales, pero no se calcularán calificaciones promedio ni se mostrarán reseñas de otros usuarios.
+
+RF14 -– Consultar historial de retiros
+El sistema deberá permitir consultar el historial de retiros realizados.
+
+Para cada retiro del historial se podrá consultar:
+
+-Información general.
+-Cronograma de actividades.
+-Pagos y gastos.
+-Aportes y donaciones.
+-Comprobantes.
+-Acompañantes.
+-Valoración personal.
+
+Requerimientos no funcionales(RNF)
+
+RNF1 -- Aplicacion movil
+El sistema debe desarrollarse como una aplicación compatible con dispositivos móviles.
+
+RN02 –- Registro manual
+La información de los retiros debe ser ingresada manualmente por el usuario.
+
+RN03 –- Uso personal
+Cada usuario solamente podrá administrar sus propios retiros, cronogramas, pagos, acompañantes, notas y valoraciones.
