@@ -6,133 +6,56 @@ El sistema solo permitira la informacion  registrada por el usuario ymantendra l
 
 Requerimientos funcionales(RF)
 
-RF1 -- Registrar Retiro
-El sistema debera permitir al usuario registrar de forma manual un retiro con la siguiente informacion:
 
--Nombre.
--Descripción.
--Objetivos o beneficios esperados.
--Fecha de inicio.
--Fecha de finalización.
--Duración.
--Estado: por realizar o realizado.
--Lugar y ubicación geográfica.
--Clima esperado.
--Datos de contacto del organizador.
--Público destinatario: hombres, mujeres o mixto.
--Actividades ofrecidas.
--Intensidad de las actividades.
--Cronograma.
--Servicios incluidos y no incluidos.
--Precio.
--Forma de pago.
--Política de cancelación.
--Nivel de privacidad.
--Nivel de atención.
+Administración de usuario
 
-RF2 -- Modificar retiro 
-El sistena debe permitir modificar la informacion de un retiro.
 
-RF3 -- Eliminar retiro
-El sistema debe permitir eliminar un retiro registrado.
+RF1 - El sistema debe registrar los datos personales del usuario [Nombre; Apellido; Email; Telefono; Email].
 
-RF4 -- Consultar retiro
-El sistema debe permitir consultar toda la información registrada de un retiro.
+RF2 - Mostrar los datos personales del usuario en una pestaña "perfil".
 
-RF -- Busqueda y filtro de retiros registrados
-El sistema debe permitir buscar y filtrar únicamente los retiros registrados por el usuario.
+RF3 - Mostrar un historial dentro de la pestañan "perfil", de retiros que el usuario haya asistido [].
 
-Los filtros podrán aplicarse por:
+RF4 - Calcular el gasto total acumulado de lo retiros realizados.
 
--Nombre.
--Fecha o periodo.
--Ubicación.
--Público destinatario.
--Precio.
--Nivel de privacidad.
--Nivel de atención.
--Estado: realizado o por realizar.
 
-Si no se aplica ningún filtro, el sistema debe mostrar todos los retiros registrados.
+Gestión de retiros
 
-RF6 -- Visualizacion del calendario de retiros
-El sistema debe permitir visualizar los retiros registrados en un calendario, diferenciando los retiros realizados de los retiros por realizar.
-También debe permitir consultar los retiros correspondientes a un mes o periodo determinado.
 
-RF7 -- Gestionar cronograma de actividades
-El sistema debe permitir registrar, modificar, eliminar y consultar las actividades correspondientes de retiro.
+RF5 - Registrar retiros espirituales u holísticos [nombre; contacto del organizador; fecha de inicio; duración; disponibilidad; estado: activo o no activo; ubicación geográfica; fotografías de las actividades y lugares; servicios incluidos y no incluidos; nivel de privacidad; nivel de atención; cronograma de actividades ofrecidas; intensidad de las actividades; objetivos o beneficios esperados; público destinatario: hombres, mujeres o mixto; cantidad de personas: grupal o individual; clima esperado; precio; política de cancelación; descripción; aceptación de mascotas; descripción general; comentario adicional y puntuación].
 
-Para cada actividad se debe poder indicar:
+RF6 - Modificar los datos de los retiros registrados.
 
--Nombre o descripción.
--Fecha.
--Horario de inicio.
--Horario de finalización.
--Nivel de intensidad.
+RF7 - Eliminar los retiros registrados.
 
-RF8 -- Configurar notificaciones y recordatorios
-El sistema debe permitir configurar notificaciones y recordatorios relacionados con:
+RF8 - Consultar los retiros registrados.
 
--Próximos retiros.
--Inicio y finalización de actividades.
--Modificaciones en el cronograma.
--Fechas previstas de pago.
--Otras fechas importantes registradas por el usuario.
 
-RF9 -- Registrar pagos
-El sistema debe permitir registrar los pagos previstos y realizados a cada retiro.
+Búsqueda y filtro
 
-Para cada pago se deberá indicar:
 
--Concepto.
--Monto.
--Fecha prevista.
--Fecha de realización.
--Forma de pago.
--Estado: pendiente o pagado.
+RF9 - Buscar retiros registrados.
 
-RF10 -– Registrar gastos, aportes y donaciones
+RF10 - Filtrar la búsqueda de retiros registrados por atributos. 
 
-El sistema debe permitir registrar los gastos personales, aportes y donaciones voluntarias relacionados con un retiro.
+RF11 - De no aplicarse filtros, el sistema debe poder listar los retiros registrados aleatoriamente o por más recientes primero, según el usuario elija.
 
-Para cada movimiento se debe indicar:
 
--Concepto.
--Monto.
--Fecha.
--Tipo de movimiento: gasto, aporte o donación.
--Forma de pago.
+Agenda
 
-RF11 –- Gestionar comprobantes
-El sistema debe permitir adjuntar, consultar y descargar comprobantes asociados con pagos, gastos, aportes o donaciones registrados.
 
-RF12 -– Gestionar acompañantes
-El sistema debe permitir registrar, modificar, eliminar y consultar los acompañantes asociados con cada retiro.
+RF12 - Agendar un retiro por realizar.
 
-RF13 –- Registrar valoración personal
-El sistema debe permitir que el usuario registre una puntuación, un comentario y observaciones personales sobre un retiro realizado.
-En los retiros pendientes, el usuario podrá registrar notas personales, pero no se calcularán calificaciones promedio ni se mostrarán reseñas de otros usuarios.
+RF13 - Mostrar agenda tipo calendario que muestre los retiros agendados en la fecha de inicio correspondiente hasta la fecha de finalización, pudiendo mostrar retiros futuros, pasados o en curso.
 
-RF14 -– Consultar historial de retiros
-El sistema deberá permitir consultar el historial de retiros realizados.
 
-Para cada retiro del historial se podrá consultar:
 
--Información general.
--Cronograma de actividades.
--Pagos y gastos.
--Aportes y donaciones.
--Comprobantes.
--Acompañantes.
--Valoración personal.
+Notificaciones
 
-Requerimientos no funcionales(RNF)
 
-RNF1 -- Aplicacion movil
-El sistema debe desarrollarse como una aplicación compatible con dispositivos móviles.
+RF14 - Enviar recordatorios sobre el inicio de los retiros agendados.
 
-RN02 –- Registro manual
-La información de los retiros debe ser ingresada manualmente por el usuario.
+RF15 - Enviar recordatorios de actividades programadas del retiro agendado.
 
-RN03 –- Uso personal
-Cada usuario solamente podrá administrar sus propios retiros, cronogramas, pagos, acompañantes, notas y valoraciones.
+
+
