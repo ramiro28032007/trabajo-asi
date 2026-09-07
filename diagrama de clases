@@ -1,81 +1,91 @@
-link del diagrama de clase actualizado: https://docs.google.com/document/d/133DIWd8UuBYKhyvM017NdUK6-1fbn0vA1ZkndMHtY0U/edit?usp=sharing
-@startuml Retirosteam_MODP
+-----------------------------------------------------------------------------------------------
+Diagrama sin la clase Agenda
+-----------------------------------------------------------------------------------------------
+@startuml Retirosteam MODP
 left to right direction
 
 class Usuario {
-  - nombre : String
-  - apellido : String
-  - email : String
-  - telefono : String
-  --
-  + mostrarPerfil() : void
-  + obtenerHistorial() : List<Retiro>
-  + calcularGastoTotal() : Decimal
-  + registrar() : void
+  -nombre
+  -apellido
+  -email
+  -telefono
+  -notificacion:Notificacion
+  +crear()
+  +modificar()
+  +mostrarPerfil()
+  +obtenerNombre()
+  +obtenerApellido()
+  +obtenerEmail()
+  +obtenerTelefono()
+  +obtenerNotificacion()
+  +tomarNombre()
+  +tomarApellido()
+  +tomarEmail()
+  +tomarTelefono()
+  +tomarNotificacion()
 }
-
 class Retiro {
-  - nombre : String
-  - contactoOrganizador : String
-  - fechaInicio : Date
-  - duracion : Integer
-  - disponibilidad : String
-  - estado : String
-  - objetivosPersonales : String
-  - generoDelPublico : String
-  - cantidadDelPublico : String
-  - climaEsperado : String
-  - precio : Decimal
-  - nivelPrivacidad : String
-  - nivelAtencion : String
-  - comentarioAdicional : String
-  - puntuacion : Decimal
-  - cronogramaActividades : String
-  - serviciosIncluidos : String
-  - serviciosNoIncluidos : String
-  - politicaCancelacion : String
-  - descripcion : String
-  - aceptaMascotas : Boolean
-  - fotografias : List<String>
-  --
-  + registrar() : void
-  + modificar() : void
-  + consultar() : Retiro
-  + buscar() : List<Retiro>
-  + filtrarPorAtributos() : List<Retiro>
-  + ordenarPorRecientes() : List<Retiro>
-  + ordenarAleatoriamente() : List<Retiro>
-  + agendar() : void
-  + obtenerRetirosAgendados() : List<Retiro>
-  + obtenerCronograma() : String
+  -nombre
+  -descripcion
+  -objetivosPersonales
+  -fechaInicio
+  -duracion
+  -estado
+  -climaEsperado
+  -contactoOrganizador
+  -generoDelPublico
+  -cantidadDelPublico
+  -precio
+  -nivelPrivacidad
+  -nivelAtencion  
+  -comentarioAdicional
+  -puntuacion
+  -cronogramaActividades
+  -servicios
+  -politicasCancelacion
+  -ubicacion: Ubicacion 
+  -fotografias
+  +crear()
+  +consultar()
+  +registrar()
+  +modificar()
+  +buscar(f: filtro)
+  +obtenerCronograma()
+  +agendar()
+  +obtenerRetirosAgendados()
+  +obtenerProximoRetiro()
 }
-
 class Notificacion {
-  - hora : Date
-  - titulo : String
-  - descripcion : String
-  - evento : String
-  --
-  + mostrar() : void
-  + notificar() : void
+  -hora
+  -titulo
+  -descripción
+  -evento
+  +crear()
+  +modificar()
+  +mostrar()
+  +notificar()
+  +desactivar()
+  +activar()
 }
-
 class Ubicacion {
-  - pais : String
-  - provincia : String
-  - ciudad : String
-  - direccion : String
-  --
-  + obtenerDireccionCompleta() : String
+  -pais
+  -provincia
+  -ciudad
+  -direccion
+  +crear()
+  +obtenerDireccionCompleta()
 }
-
-Usuario "1" --> "0..*" Retiro : conoce - consulta - registra - agenda
+Usuario "1" --> "0..*" Retiro : administra y agenda
 Usuario "1" --> "0..*" Notificacion : recibe
 Retiro "1" --> "0..*" Notificacion : genera
 Retiro "0..*" --> "1" Ubicacion : se realiza en
+note top of Usuario : Los métodos de navegación \n de esta clase se extienden \n a todo el diagrama
 
+@enduml
 
-* PlantUML corrección con clase Agenda
+-----------------------------------------------------------------------------------------------
+PlantUML corrección con clase Agenda
+-----------------------------------------------------------------------------------------------
 @startuml Retirosteam MODP
 left to right direction
 class Agenda {
