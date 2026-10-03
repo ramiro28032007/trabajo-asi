@@ -1,79 +1,102 @@
 link del diagrama de clase actualizado: https://docs.google.com/document/d/133DIWd8UuBYKhyvM017NdUK6-1fbn0vA1ZkndMHtY0U/edit?usp=sharing
 @startuml MODP Retirosteam TPI ASI
-left to right direction
 
 class Usuario {
   -nombre
   -apellido
   -email
-  -telefono
+  -teléfono
+  -contraseña
   +crear()
   +modificar()
   +mostrarPerfil()
   +calcularGastoTotal()
-  +obtenerNombre()
-  +obtenerApellido()
-  +obtenerEmail()
-  +obtenerTelefono()
-  +tomarNombre()
-  +tomarApellido()
-  +tomarEmail()
-  +tomarTelefono()
 }
 class Retiro {
   -nombre
   -descripcion
+  -fechaHoraRegistro
+  -fechaHoraInicio
+  -fechaHoraFin
+  -actividades : Actividad
+  -estado : EstadoRetiro
+  -generoGrupo : GeneroGrupo
+  -ubicacion : Ubicacion 
   -objetivosPersonales
-  -actividad : Actividad
-  -fechaInicio
-  -fechaFin
-  -estado
-  -climaEsperado
+  -tamañoGrupo
+  -servicios
   -contactoOrganizador
-  -generoDelPublico
-  -cantidadDelPublico
   -precio
   -nivelPrivacidad
-  -nivelAtencion  
   -comentarioAdicional
   -puntuacion
-  -servicios
   -politicasCancelacion
-  -ubicacion: Ubicacion 
-  -fotografias
   -mascotasPermitidas
-  -calendario
   +crear()
   +consultar()
   +registrar()
   +modificar()
-  +buscar(f: filtro)
+  +buscarRetiro(f: filtro)
   +obtenerCronograma()
-  +agendar()
-  +enviarNotificacion()
-  +obtenerRetirosAgendados()
-  +obtenerProximoRetiro()
+  +cambiarEstado()
+  +emitirNotificacion()
+  +obtenerRetirosActivos()
+}
+enum EstadoRetiro as "EstadoRetiro" <<enumeration>> {
+}
+class EstadoRetiro {
+  -inactivo
+  -activo
+  -pagoPendiente
+  -señado
+  -pagado
+}
+enum GeneroGrupo as "GeneroGrupo" <<enumeration>> {
+}
+class GeneroGrupo {
+  -hombres
+  -mujeres
+  -mixto
+}
+class Notificacion {
+  -titulo
+  -fechaHoraRegistro
+  -descripción
+  +mostrar()
+  +crear()
+  +tomarTitulo()
+  +tomarFechaHoraRetiro()
+  +tomarDescripcion()
+  +obtenerTitulo()
+  +obtenerFechaHoraRetiro()
+  +obtenerDescripcion()
 }
 class Ubicacion {
   -pais
   -provincia
   -ciudad
-  -direccion
+  -departamento
+  -calle
+  -altura
+  -piso
   +crear()
   +mostrar()
 }
 class Actividad {
   -nombre
   -descripcion
-  -inicio
-  -fin
+  -fechaHorainicio
+  -fechaHorafin
   +mostrar()
   +crear()
-
 }
+
 Usuario "1" --> "0..*" Retiro : administra y agenda
 Retiro "0..*" --> "1" Ubicacion : se realiza en
-Retiro "1" --* "1..0*" Actividad : contiene
-note top of Usuario : Los métodos de navegación \n de esta clase se extienden \n a todo el diagrama
+Retiro "1" --* "0..*" Actividad : contiene
+Retiro "1" --> "0..*" Notificacion : genera
+Retiro -left-..> EstadoRetiro
+Retiro -right-..> GeneroGrupo
+note top of Notificacion : Los métodos de esta clase\n se extienden a todo el diagrama
 
 @enduml
