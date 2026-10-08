@@ -1,52 +1,46 @@
-DIAGRAMMA DE CASOS DE USO v1
-@startuml DCU
+DIAGRAMMA DE CASOS DE USO v2
+@startuml DC_v2
 left to right direction
-(Registrar retiro) as (1)
-(Modificar retiro) as (2)
-(Consultar retiro) as (3)
-(Eliminar retiro) as (10)
-(Generar pago) as (4)
-(Registrar actividad) as (5)
-(Consultar actividades) as (6)
-(Enviar notificacion) as (7)
-(Dar de baja retiro) as (8)
-(Dar de alta retiro) as (9)
-(Consultar pago) as (11)
-(Registrar usuario) as (12)
-(Consultar usuario) as (13)
-(Modificar usuario) as (14)
-(6).left.>(1):ext
-(6).>(2):ext
-(2).>(3):ext
-(5).up.>(6):ext
-(4).up.>(2):ext
-(14).up.>(13):ext
+skinparam packageStyle rectangle
 :Usuario: as U
 :Sistema: as S
-U-->(1)
-U-->(3)
-U-->(6)
-U-->(8)
-U-->(9)
-U-->(10)
-U-->(11)
-U-->(12)
-U-->(13)
+rectangle Retirosteam {
+    (1.Registrar retiro)
+    (2.Modificar retiro)
+    (3.Consultar retiro)
+    (4.Eliminar retiro)
+    (5.Generar pago)
+    (6.Registrar actividad)
+    (7.Consultar actividades)
+    (8.Enviar notificacion)
+    (9.Dar de baja retiro)
+    (10.Dar de alta retiro)
+    (11.Consultar pago)
+    (12.Registrar usuario)
+    (13.Consultar usuario)
+    (14.Modificar usuario)
 
-S-->(7)
+    (4.Eliminar retiro)         .up.>(3.Consultar retiro):ext
+    (2.Modificar retiro)        .up.>(3.Consultar retiro):ext
+    (7.Consultar actividades)   .>(1.Registrar retiro):ext
+    (7.Consultar actividades)   .>(2.Modificar retiro):ext
+    (6.Registrar actividad)     .up.>(7.Consultar actividades):ext
+    (5.Generar pago)            .up.>(2.Modificar retiro):ext
+    (14.Modificar usuario)      .up.>(13.Consultar usuario):ext
+    (12.Registrar usuario)      .up.>(13.Consultar usuario):ext
+    (9.Dar de baja retiro)      .up.>(3.Consultar retiro):ext
+    (10.Dar de alta retiro)     .up.>(3.Consultar retiro):ext
+
+    S-->(8.Enviar notificacion)
+    U-->(1.Registrar retiro)
+    U-->(3.Consultar retiro)
+    U-->(7.Consultar actividades)
+    U-->(13.Consultar usuario)
+    U-->(11.Consultar pago)
+}
 @enduml
 
-
-CU1 - Registrar un nuevo retiro
-Objetivo:
-Permitir que un usuario registre un nuevo retiro proporcionando la información necesaria para que quede almacenado en el sistema.
+CU1 - Registrar retiro
+Descripción: https://docs.google.com/document/d/1FMR0BfR8PTAoek7NXc87XRdBAOyJsIwPccI3qKMqkKg/edit?usp=sharing
+CU2 - Consultar retiro
 Descripción: 
-El usuario ingresa los datos correspondientes al retiro, como los datos personales, selecciona el tipo de retiro, se especifica el monto del retiro
-el sistema valida los datos, se registra el retiro.
-https://docs.google.com/document/d/1FMR0BfR8PTAoek7NXc87XRdBAOyJsIwPccI3qKMqkKg/edit?usp=sharing
-Prototipo:
-CU2 - Consultar todos los datos de un retiro
-Objetivos:
-El usuario:
-
-
