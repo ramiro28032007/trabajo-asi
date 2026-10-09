@@ -1,0 +1,14 @@
+CU1 Registrar retiro: Resgistrar un retiro segun el usuario desee.
+CU2 Modificar retiro: Modificar los datos y atributos de un retiro registrado seleccionado por el usuario.
+CU3 Consultar retiro: Consultar retiros registrados permitiendo filtrar por atributos que el usuario desee.
+CU4 Eliminar retiro: Eliminar un retiro seleccionado por el usuario.
+CU5 Generar pago: Registrar el pago realizado al retiro seleccionado y cambiar su estado a "pago".
+CU6 Regitrar actividad: Definir una actividad con su nombre y descripción.
+CU7 Consultar actividades: Consultar las actividades registradas previamente.
+CU8 Enviar notificaciones: Generar y enviar notificación al usuario con respecto a un retiro con inicio próximo
+CU9 Dar de baja retiro: cambiar estado de un retiro registrado a "inactivo" desactivando los recordatorios de las fechas del mismo.
+CU10 Dar de alta retiro: cambiar estado de un retiro registrado a "activo" activando los recordatorios de las fechas del mismo.
+CU11 Consultar pago: Consultar y buscar los pagos realizados en los retiros realizados.
+CU12 Registrar usuario: Registrar un nuevo usuario.
+CU13 Consultar usuario: Consultar y mostrar los datos y atributos del usuario en sesión.
+CU14 Modificar usuario: Modificar datos del usuario en sesión.
