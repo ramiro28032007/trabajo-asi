@@ -1,0 +1,375 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>html{color-scheme:light}body{margin:0}</style></head><body><title>Consultar retiro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
+<style>
+/* Layout: una sola columna de teléfono, una pantalla por vez, centrada en pantallas grandes. */
+:root {
+  --bg: #FBF7F4;
+  --surface: #FFFFFF;
+  --fg: #2B2623;
+  --muted: #6B615B;
+  --line: #E7DED8;
+  --line-strong: #CFC3BB;
+  --accent: #B4505A;
+  --accent-ink: #FFFFFF;
+  --soft: #F6E3E1;
+  --soft-ink: #8E3A44;
+  --warn: #FBEFD9;
+  --warn-ink: #7A4A0C;
+  --neutral: #EFE9E4;
+  --neutral-ink: #4F4640;
+  --danger: #A3262F;
+  --overlay: rgba(43, 38, 35, 0.5);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1D1917;
+    --surface: #27221F;
+    --fg: #F1EAE5;
+    --muted: #B3A79F;
+    --line: #3A3330;
+    --line-strong: #5A4F4A;
+    --accent: #D9707A;
+    --accent-ink: #1D1917;
+    --soft: #4A2A2F;
+    --soft-ink: #F2C4C8;
+    --warn: #4A3A1C;
+    --warn-ink: #F0D49A;
+    --neutral: #38302C;
+    --neutral-ink: #D6CBC4;
+    --danger: #F08A90;
+    --overlay: rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1D1917;
+  --surface: #27221F;
+  --fg: #F1EAE5;
+  --muted: #B3A79F;
+  --line: #3A3330;
+  --line-strong: #5A4F4A;
+  --accent: #D9707A;
+  --accent-ink: #1D1917;
+  --soft: #4A2A2F;
+  --soft-ink: #F2C4C8;
+  --warn: #4A3A1C;
+  --warn-ink: #F0D49A;
+  --neutral: #38302C;
+  --neutral-ink: #D6CBC4;
+  --danger: #F08A90;
+  --overlay: rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--sans); padding-inline: 16px; padding-block: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+h1, h2 { margin: 0; text-wrap: balance; }
+h1:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.app { max-width: 430px; margin: 0 auto; padding-bottom: 96px; }
+.bar { display: flex; align-items: center; gap: 8px; min-height: 56px; border-bottom: 1px solid var(--line); }
+.bar h1 { font: 600 22px/1.2 var(--serif); }
+.bar.sub h1 { font: 600 16px/1.2 var(--sans); }
+.icon-btn { width: 44px; height: 44px; margin-left: -10px; display: grid; place-items: center; background: none; border: 0; border-radius: 10px; color: var(--fg); }
+.stack { display: flex; flex-direction: column; gap: 14px; padding-top: 16px; }
+
+.search { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 12px; color: var(--muted); text-align: left; }
+.row { display: flex; gap: 10px; align-items: center; }
+.seg { flex: 1; min-width: 0; display: flex; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 12px; overflow: hidden; }
+.seg button { flex: 1; min-height: 44px; border: 0; background: transparent; color: var(--neutral-ink); font-weight: 500; }
+.seg button[aria-pressed="true"] { background: var(--soft); color: var(--soft-ink); font-weight: 600; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface); font-weight: 600; }
+.filtrar { min-height: 44px; padding: 0 14px; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-size: 16px; }
+.btn-ghost { background: transparent; }
+.btn-danger { background: transparent; color: var(--danger); }
+.badge { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 600; }
+.count { margin: 0; font-size: 13px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.chip { padding: 3px 10px; border-radius: 999px; background: var(--neutral); color: var(--neutral-ink); font-size: 13px; }
+.link { background: none; border: 0; padding: 4px 2px; min-height: 32px; color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+.card { display: flex; flex-direction: column; gap: 6px; width: 100%; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.card-name { min-width: 0; font-weight: 600; font-size: 16px; }
+.card-date { color: var(--neutral-ink); }
+.card-foot { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 14px; }
+.card-foot span:first-child { min-width: 0; }
+.card mark { background: var(--soft); color: var(--soft-ink); border-radius: 3px; padding: 0 2px; }
+.pill { flex: none; padding: 3px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.pill.soft { background: var(--soft); color: var(--soft-ink); }
+.pill.warn { background: var(--warn); color: var(--warn-ink); }
+.pill.neutral { background: var(--neutral); color: var(--neutral-ink); }
+
+.empty { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 40px 16px; text-align: center; }
+.empty h2 { font: 600 24px/1.2 var(--serif); }
+.empty p { margin: 0; color: var(--neutral-ink); }
+.empty-ic { width: 80px; height: 80px; display: grid; place-items: center; border-radius: 50%; background: var(--soft); color: var(--soft-ink); }
+.hint { margin: 0; color: var(--muted); }
+.foot-note { margin-top: 24px; font-size: 13px; color: var(--muted); }
+
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+.field label { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.field input, .field select { height: 44px; width: 100%; min-width: 0; padding: 0 12px; background: var(--surface); color: var(--fg); border: 1px solid var(--line-strong); border-radius: 10px; font: inherit; }
+.field input.big { height: 48px; border: 2px solid var(--accent); border-radius: 12px; padding: 0 14px; }
+.fields { display: flex; gap: 12px; }
+.intro { margin: 0; color: var(--neutral-ink); }
+.actions { display: flex; gap: 12px; padding-top: 8px; }
+.actions .btn { flex: 1; }
+.actions .btn-primary { flex: 2; }
+
+.detail-head { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 8px; }
+.detail-head h2 { font: 600 30px/1.15 var(--serif); }
+.detail-head p { margin: 0; color: var(--neutral-ink); }
+.sec { display: flex; flex-direction: column; gap: 8px; }
+.sec h3 { margin: 0; font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 4px 16px; }
+.kv { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.kv:last-child { border-bottom: 0; }
+.kv span { min-width: 0; }
+.kv span:first-child { color: var(--muted); flex: none; }
+.kv span:last-child { text-align: right; overflow-wrap: anywhere; }
+.kv.act { gap: 12px; }
+.kv.act span:first-child { color: var(--fg); flex: 1; }
+.kv.act span:last-child { color: var(--muted); flex: none; }
+.buttons { display: flex; flex-direction: column; gap: 10px; padding-block: 8px 8px; }
+
+dialog { background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px 18px; width: min(360px, calc(100vw - 32px)); }
+dialog::backdrop { background: var(--overlay); }
+dialog h2 { font: 600 22px/1.2 var(--serif); margin-bottom: 8px; }
+dialog p { margin: 0 0 18px; color: var(--neutral-ink); }
+.dlg-btns { display: flex; gap: 10px; }
+.dlg-btns .btn { flex: 1; }
+.toast { position: fixed; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); max-width: 398px; margin: 0 auto; padding: 12px 16px; border-radius: 12px; background: var(--fg); color: var(--bg); font-weight: 500; text-align: center; }
+[hidden] { display: none !important; }
+</style>
+
+<div class="app" id="app"></div>
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <h2 id="dlg-t"></h2>
+  <p id="dlg-p"></p>
+  <div class="dlg-btns">
+    <button type="button" class="btn btn-ghost" id="dlg-no" data-a="dlg-no">Cancelar</button>
+    <button type="button" class="btn btn-primary" id="dlg-ok" data-a="dlg-ok">Aceptar</button>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function () {
+  var SEED = [
+    { id: 1, nombre: 'Detox y respiración', descripcion: 'Tres días de respiración consciente, caminatas y alimentación liviana en el valle.', objetivos: 'Bajar el estrés y dormir mejor', inicio: '2026-12-05T10:00', fin: '2026-12-07T16:00', estado: 'Pago pendiente', genero: 'Mujeres', grupo: 15, precio: 98000, privacidad: 'Medio', servicios: 'Alojamiento, comidas, clases diarias', cancelacion: 'Reintegro total hasta 15 días antes', mascotas: false, pais: 'Argentina', provincia: 'Tucumán', ciudad: 'Tafí del Valle', departamento: 'Tafí del Valle', direccion: 'Camino a los Cerrillos km 4', contacto: 'Valle Sereno · valle@ejemplo.com', actividades: [ { nombre: 'Taller de respiración', desde: '2026-12-05T11:00', hasta: '2026-12-05T12:30' }, { nombre: 'Caminata consciente', desde: '2026-12-06T09:00', hasta: '2026-12-06T11:00' }, { nombre: 'Cierre en círculo', desde: '2026-12-07T14:00', hasta: '2026-12-07T15:30' } ], comentario: 'Pagar la seña antes del 20/11', puntuacion: null, registro: '2026-10-03T21:10' },
+    { id: 2, nombre: 'Retiro de yoga y silencio', descripcion: 'Fin de semana de yoga, caminatas y meditación en las sierras.', objetivos: 'Descansar y meditar más', inicio: '2026-11-14T18:00', fin: '2026-11-16T12:00', estado: 'Activo', genero: 'Mixto', grupo: 12, precio: 135000, privacidad: 'Alto', servicios: 'Alojamiento, comidas, mantas de yoga', cancelacion: 'Reintegro del 50% hasta 7 días antes', mascotas: false, pais: 'Argentina', provincia: 'Córdoba', ciudad: 'Capilla del Monte', departamento: 'Punilla', direccion: 'Los Nogales 250', contacto: 'Casa Aire · casaaire@ejemplo.com', actividades: [ { nombre: 'Yoga al amanecer', desde: '2026-11-15T07:00', hasta: '2026-11-15T08:30' }, { nombre: 'Meditación guiada', desde: '2026-11-15T18:00', hasta: '2026-11-15T19:00' }, { nombre: 'Caminata en silencio', desde: '2026-11-16T09:00', hasta: '2026-11-16T10:30' } ], comentario: 'Me lo recomendó una amiga', puntuacion: 4, registro: '2026-10-05T18:30' },
+    { id: 3, nombre: 'Mindfulness en el mar', descripcion: 'Meditación y yoga frente al mar, con tiempo libre para caminar por la costa.', objetivos: 'Practicar atención plena en grupo', inicio: '2027-02-12T17:00', fin: '2027-02-14T13:00', estado: 'Inactivo', genero: 'Mixto', grupo: 20, precio: 150000, privacidad: 'Bajo', servicios: 'Alojamiento, desayuno, sesiones frente al mar', cancelacion: 'Sin reintegro dentro de los 10 días previos', mascotas: true, pais: 'Argentina', provincia: 'Buenos Aires', ciudad: 'Mar del Plata', departamento: 'General Pueyrredón', direccion: 'Av. Constitución 7400', contacto: 'Brisa Retiros · brisa@ejemplo.com', actividades: [ { nombre: 'Meditación al atardecer', desde: '2027-02-12T19:00', hasta: '2027-02-12T20:00' }, { nombre: 'Yoga en la playa', desde: '2027-02-13T08:00', hasta: '2027-02-13T09:30' } ], comentario: 'La gente cuenta que el lugar es muy tranquilo', puntuacion: null, registro: '2026-09-20T12:00' },
+    { id: 4, nombre: 'Silencio en la montaña', descripcion: 'Cuatro días de silencio, trekking suave y meditación en la precordillera.', objetivos: 'Desconectarme unos días', inicio: '2027-01-20T16:00', fin: '2027-01-23T11:00', estado: 'Activo', genero: 'Hombres', grupo: 10, precio: 120000, privacidad: 'Alto', servicios: 'Alojamiento, comidas, guía de montaña', cancelacion: 'Reintegro del 30% hasta 20 días antes', mascotas: false, pais: 'Argentina', provincia: 'Mendoza', ciudad: 'Uspallata', departamento: 'Las Heras', direccion: 'Ruta 7 km 1.140', contacto: 'Cumbre Quieta · cumbre@ejemplo.com', actividades: [ { nombre: 'Silencio guiado', desde: '2027-01-21T07:00', hasta: '2027-01-21T09:00' }, { nombre: 'Trekking contemplativo', desde: '2027-01-21T15:00', hasta: '2027-01-21T18:00' }, { nombre: 'Meditación nocturna', desde: '2027-01-22T21:00', hasta: '2027-01-22T22:00' } ], comentario: 'Llevar abrigo', puntuacion: 5, registro: '2026-10-09T09:15' }
+  ];
+  var DEF = { desde: '', hasta: '', ubicacion: '', genero: 'Todos', precio: '', privacidad: 'Todos', estado: 'Todos' };
+  var ESTADOS = ['Todos', 'Activo', 'Pago pendiente', 'Seña pagada', 'Pagado', 'Inactivo'];
+  var S = { screen: 'lista', prev: 'lista', data: [], seq: [], orden: 'aleatorio', q: '', filtros: Object.assign({}, DEF), sel: null, pending: null };
+  var toastTimer = null;
+
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var norm = function (s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); };
+  var dmy = function (iso) { return iso.slice(8, 10) + '/' + iso.slice(5, 7) + '/' + iso.slice(0, 4); };
+  var dm = function (iso) { return iso.slice(8, 10) + '/' + iso.slice(5, 7); };
+  var hm = function (iso) { return iso.slice(11, 16); };
+  var money = function (n) { return '$' + Number(n).toLocaleString('es-AR'); };
+
+  function shuffle(a) {
+    a = a.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function reset() {
+    S.data = JSON.parse(JSON.stringify(SEED));
+    S.seq = shuffle(S.data.map(function (r) { return r.id; }));
+    S.orden = 'aleatorio'; S.q = ''; S.filtros = Object.assign({}, DEF); S.screen = 'lista'; S.prev = 'lista'; S.sel = null;
+  }
+
+  function matchFiltros(r) {
+    var f = S.filtros;
+    if (f.desde && r.fin.slice(0, 10) < f.desde) return false;
+    if (f.hasta && r.inicio.slice(0, 10) > f.hasta) return false;
+    if (f.ubicacion && norm([r.ciudad, r.provincia, r.pais].join(' ')).indexOf(norm(f.ubicacion.trim())) === -1) return false;
+    if (f.genero !== 'Todos' && r.genero !== f.genero) return false;
+    if (f.precio !== '' && r.precio > Number(f.precio)) return false;
+    if (f.privacidad !== 'Todos' && r.privacidad !== f.privacidad) return false;
+    if (f.estado !== 'Todos' && r.estado !== f.estado) return false;
+    return true;
+  }
+  function visibles() {
+    var r = S.data.filter(matchFiltros);
+    if (S.orden === 'recientes') r.sort(function (a, b) { return b.registro.localeCompare(a.registro); });
+    else r.sort(function (a, b) { return S.seq.indexOf(a.id) - S.seq.indexOf(b.id); });
+    return r;
+  }
+  function chipsLabels() {
+    var f = S.filtros, l = [];
+    if (f.desde || f.hasta) l.push('Período: ' + (f.desde ? dmy(f.desde) : '…') + ' a ' + (f.hasta ? dmy(f.hasta) : '…'));
+    if (f.ubicacion.trim()) l.push('Ubicación: ' + f.ubicacion.trim());
+    if (f.genero !== 'Todos') l.push('Grupo: ' + f.genero);
+    if (f.precio !== '') l.push('Hasta ' + money(f.precio));
+    if (f.privacidad !== 'Todos') l.push('Privacidad: ' + f.privacidad);
+    if (f.estado !== 'Todos') l.push('Estado: ' + f.estado);
+    return l;
+  }
+
+  var ICON = {
+    back: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>',
+    search: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>',
+    filter: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>',
+    cal: '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>'
+  };
+
+  function pill(e) {
+    var c = { 'Activo': 'soft', 'Pagado': 'soft', 'Seña pagada': 'warn', 'Pago pendiente': 'warn', 'Inactivo': 'neutral' }[e] || 'neutral';
+    return '<span class="pill ' + c + '">' + esc(e) + '</span>';
+  }
+  function card(r, hl) {
+    var n = esc(r.nombre);
+    if (hl) {
+      var i = norm(r.nombre).indexOf(hl);
+      if (i >= 0) n = esc(r.nombre.slice(0, i)) + '<mark>' + esc(r.nombre.slice(i, i + hl.length)) + '</mark>' + esc(r.nombre.slice(i + hl.length));
+    }
+    return '<button type="button" class="card" data-a="abrir" data-id="' + r.id + '"><span class="card-top"><span class="card-name">' + n + '</span>' + pill(r.estado) + '</span><span class="card-date">' + dmy(r.inicio) + ' – ' + dmy(r.fin) + '</span><span class="card-foot"><span>' + esc(r.ciudad) + ', ' + esc(r.provincia) + '</span><span>' + money(r.precio) + '</span></span></button>';
+  }
+  function bar(title, back) {
+    return '<header class="bar' + (back ? ' sub' : '') + '">' + (back ? '<button type="button" class="icon-btn" data-a="volver" aria-label="Volver">' + ICON.back + '</button>' : '') + '<h1 tabindex="-1">' + title + '</h1></header>';
+  }
+  function opts(list, val) {
+    return list.map(function (o) { return '<option' + (o === val ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('');
+  }
+
+  function vLista() {
+    var all = S.data.length, vis = visibles(), labels = chipsLabels(), n = labels.length, body;
+    if (!all) {
+      body = '<div class="empty"><div class="empty-ic">' + ICON.cal + '</div><h2>No hay retiros registrados</h2><p>Todavía no cargaste ningún retiro en tu agenda. Cuando registres uno, lo vas a ver acá.</p><button type="button" class="btn btn-ghost" data-a="reiniciar">Restaurar ejemplos</button></div>';
+    } else {
+      body = '<button type="button" class="search" data-a="ir-busqueda">' + ICON.search + '<span>Buscar por nombre</span></button>' +
+        '<div class="row"><div class="seg" role="group" aria-label="Ordenar la lista"><button type="button" data-a="orden" data-v="aleatorio" aria-pressed="' + (S.orden === 'aleatorio') + '">Aleatorio</button><button type="button" data-a="orden" data-v="recientes" aria-pressed="' + (S.orden === 'recientes') + '">Más recientes</button></div>' +
+        '<button type="button" class="btn filtrar" data-a="ir-filtros">' + ICON.filter + 'Filtrar' + (n ? '<span class="badge" aria-label="' + n + ' filtros activos">' + n + '</span>' : '') + '</button></div>' +
+        (n ? '<div class="chips">' + labels.map(function (l) { return '<span class="chip">' + esc(l) + '</span>'; }).join('') + '<button type="button" class="link" data-a="quitar-filtros">Quitar filtros</button></div>' : '') +
+        '<p class="count">' + (n ? vis.length + ' de ' + all + ' retiros' : all + (all > 1 ? ' retiros registrados' : ' retiro registrado')) + '</p>' +
+        (vis.length ? vis.map(function (r) { return card(r); }).join('') : '<div class="empty"><h2>Ningún retiro coincide</h2><p>Probá con otros filtros o quitalos para ver todos.</p><button type="button" class="btn btn-ghost" data-a="quitar-filtros">Quitar filtros</button></div>');
+    }
+    return bar('Mis retiros', false) + '<main class="stack">' + body + '</main><p class="foot-note">Prototipo del caso de uso Consultar retiro. Los datos son de ejemplo y se restauran al recargar la página. <button type="button" class="link" data-a="reiniciar">Restaurar ejemplos</button></p>';
+  }
+
+  function vFiltros() {
+    var f = S.filtros;
+    return bar('Filtrar retiros', true) + '<main class="stack"><p class="intro">Elegí uno o más atributos para acotar tu lista de retiros registrados.</p>' +
+      '<div class="fields"><div class="field"><label for="f-desde">Desde</label><input id="f-desde" type="date" value="' + esc(f.desde) + '"></div><div class="field"><label for="f-hasta">Hasta</label><input id="f-hasta" type="date" value="' + esc(f.hasta) + '"></div></div>' +
+      '<div class="field"><label for="f-ubicacion">Ubicación</label><input id="f-ubicacion" placeholder="Ciudad, provincia o país" value="' + esc(f.ubicacion) + '"></div>' +
+      '<div class="field"><label for="f-genero">Género del grupo</label><select id="f-genero">' + opts(['Todos', 'Hombres', 'Mujeres', 'Mixto'], f.genero) + '</select></div>' +
+      '<div class="field"><label for="f-precio">Precio máximo</label><input id="f-precio" type="number" inputmode="numeric" min="0" step="1000" placeholder="$" value="' + esc(f.precio) + '"></div>' +
+      '<div class="fields"><div class="field"><label for="f-privacidad">Nivel de privacidad</label><select id="f-privacidad">' + opts(['Todos', 'Bajo', 'Medio', 'Alto'], f.privacidad) + '</select></div><div class="field"><label for="f-estado">Estado</label><select id="f-estado">' + opts(ESTADOS, f.estado) + '</select></div></div>' +
+      '<div class="actions"><button type="button" class="btn" data-a="limpiar">Limpiar</button><button type="button" class="btn btn-primary" data-a="aplicar">Aplicar filtros</button></div></main>';
+  }
+
+  function vBusqueda() {
+    return bar('Buscar retiro', true) + '<main class="stack"><div class="field"><label for="q">Nombre del retiro</label><input id="q" class="big" type="search" autocomplete="off" value="' + esc(S.q) + '"></div><div id="res" class="stack" style="padding-top:0" aria-live="polite"></div></main>';
+  }
+  function renderResultados() {
+    var el = $('#res'); if (!el) return;
+    var q = norm(S.q.trim());
+    if (!q) { el.innerHTML = '<p class="hint">Escribí el nombre de un retiro registrado.</p>'; return; }
+    var r = S.data.filter(function (x) { return norm(x.nombre).indexOf(q) !== -1; });
+    if (!r.length) { el.innerHTML = '<div class="empty"><h2>Sin resultados</h2><p>No hay ningún retiro registrado con ese nombre. Revisá cómo lo escribiste.</p></div>'; return; }
+    el.innerHTML = '<p class="count">' + r.length + (r.length > 1 ? ' retiros encontrados' : ' retiro encontrado') + '</p>' + r.map(function (x) { return card(x, q); }).join('');
+  }
+
+  function kv(k, v) { return '<div class="kv"><span>' + k + '</span><span>' + v + '</span></div>'; }
+  function vDetalle() {
+    var r = S.data.filter(function (x) { return x.id === S.sel; })[0];
+    if (!r) { S.screen = 'lista'; return vLista(); }
+    var acts = r.actividades.slice().sort(function (a, b) { return a.desde.localeCompare(b.desde); }).map(function (a) {
+      return '<div class="kv act"><span>' + esc(a.nombre) + '</span><span>' + dm(a.desde) + ' ' + hm(a.desde) + '–' + hm(a.hasta) + '</span></div>';
+    }).join('');
+    var contacto = r.contacto.split(' · ').map(esc).join('<br>');
+    return bar('Mis retiros', true) + '<main class="stack">' +
+      '<div class="detail-head">' + pill(r.estado) + '<h2>' + esc(r.nombre) + '</h2><p>' + esc(r.descripcion) + '</p></div>' +
+      '<section class="sec"><h3>Datos generales</h3><div class="box">' + kv('Inicio', dmy(r.inicio) + ' ' + hm(r.inicio)) + kv('Fin', dmy(r.fin) + ' ' + hm(r.fin)) + kv('Género del grupo', esc(r.genero)) + kv('Tamaño del grupo', r.grupo + ' personas') + kv('Precio', money(r.precio)) + kv('Servicios', esc(r.servicios)) + kv('Cancelación', esc(r.cancelacion)) + kv('Mascotas', r.mascotas ? 'Se aceptan' : 'No se aceptan') + '</div></section>' +
+      '<section class="sec"><h3>Ubicación</h3><div class="box">' + kv('País', esc(r.pais)) + kv('Provincia', esc(r.provincia)) + kv('Ciudad', esc(r.ciudad)) + kv('Departamento', esc(r.departamento)) + kv('Dirección', esc(r.direccion)) + '</div></section>' +
+      '<section class="sec"><h3>Organizador</h3><div class="box">' + kv('Contacto', contacto) + '</div></section>' +
+      '<section class="sec"><h3>Cronograma (' + r.actividades.length + (r.actividades.length === 1 ? ' actividad' : ' actividades') + ')</h3><div class="box">' + (acts || '<div class="kv"><span>Sin actividades cargadas</span></div>') + '</div></section>' +
+      '<section class="sec"><h3>Mis notas</h3><div class="box">' + kv('Objetivos', esc(r.objetivos)) + kv('Comentario', esc(r.comentario)) + kv('Puntuación', r.puntuacion == null ? 'Sin puntuar' : r.puntuacion + ' de 5') + kv('Privacidad', esc(r.privacidad)) + '</div></section>' +
+      '<div class="buttons"><button type="button" class="btn btn-primary" data-a="modificar">Modificar retiro</button><button type="button" class="btn btn-ghost" data-a="toggle-baja">' + (r.estado === 'Inactivo' ? 'Dar de alta' : 'Dar de baja') + '</button><button type="button" class="btn btn-danger" data-a="eliminar">Eliminar retiro</button></div></main>';
+  }
+
+  var VIEWS = { lista: vLista, filtros: vFiltros, busqueda: vBusqueda, detalle: vDetalle };
+  function render() {
+    $('#app').innerHTML = VIEWS[S.screen]();
+    if (S.screen === 'busqueda') renderResultados();
+  }
+  function go(screen) {
+    S.screen = screen; render(); window.scrollTo(0, 0);
+    var t = S.screen === 'busqueda' ? $('#q') : $('#app h1');
+    if (t) t.focus({ preventScroll: true });
+  }
+  function toast(msg) {
+    var t = $('#toast'); t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2800);
+  }
+  function ask(o) {
+    $('#dlg-t').textContent = o.titulo; $('#dlg-p').textContent = o.texto;
+    var ok = $('#dlg-ok'); ok.textContent = o.ok; ok.className = 'btn ' + (o.danger ? 'btn-danger' : 'btn-primary');
+    $('#dlg-no').hidden = !!o.sinCancelar;
+    S.pending = o.fn || null;
+    $('#dlg').showModal();
+  }
+  function selRetiro() { return S.data.filter(function (x) { return x.id === S.sel; })[0]; }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-a]'); if (!b) return;
+    var a = b.dataset.a;
+    if (a === 'ir-busqueda') { go('busqueda'); }
+    else if (a === 'ir-filtros') { go('filtros'); }
+    else if (a === 'volver') { go(S.screen === 'detalle' ? S.prev : 'lista'); }
+    else if (a === 'abrir') { S.prev = S.screen; S.sel = Number(b.dataset.id); go('detalle'); }
+    else if (a === 'orden') {
+      if (b.dataset.v === 'aleatorio') S.seq = shuffle(S.seq);
+      S.orden = b.dataset.v; render();
+      var nb = document.querySelector('[data-a="orden"][data-v="' + b.dataset.v + '"]'); if (nb) nb.focus();
+    }
+    else if (a === 'aplicar') {
+      S.filtros = { desde: $('#f-desde').value, hasta: $('#f-hasta').value, ubicacion: $('#f-ubicacion').value, genero: $('#f-genero').value, precio: $('#f-precio').value, privacidad: $('#f-privacidad').value, estado: $('#f-estado').value };
+      go('lista');
+    }
+    else if (a === 'limpiar') { S.filtros = Object.assign({}, DEF); render(); }
+    else if (a === 'quitar-filtros') { S.filtros = Object.assign({}, DEF); render(); toast('Filtros quitados'); }
+    else if (a === 'modificar') {
+      ask({ titulo: 'Modificar retiro', texto: 'Este botón abre el caso de uso Modificar retiro, que tiene su propio prototipo.', ok: 'Entendido', sinCancelar: true });
+    }
+    else if (a === 'toggle-baja') {
+      var r = selRetiro(); if (!r) return;
+      var baja = r.estado !== 'Inactivo';
+      r.estado = baja ? 'Inactivo' : 'Activo'; render();
+      toast(baja ? 'Retiro dado de baja' : 'Retiro dado de alta');
+    }
+    else if (a === 'eliminar') {
+      var d = selRetiro(); if (!d) return;
+      ask({ titulo: '¿Eliminar este retiro?', texto: 'Vas a eliminar «' + d.nombre + '». Esta acción no se puede deshacer.', ok: 'Eliminar', danger: true, fn: function () {
+        S.data = S.data.filter(function (x) { return x.id !== d.id; });
+        S.seq = S.seq.filter(function (id) { return id !== d.id; });
+        S.sel = null; go('lista'); toast('Retiro eliminado');
+      } });
+    }
+    else if (a === 'reiniciar') { reset(); render(); window.scrollTo(0, 0); toast('Se restauraron los retiros de ejemplo'); }
+    else if (a === 'dlg-ok') { var fn = S.pending; S.pending = null; $('#dlg').close(); if (fn) fn(); }
+    else if (a === 'dlg-no') { S.pending = null; $('#dlg').close(); }
+  });
+  document.addEventListener('input', function (e) {
+    if (e.target && e.target.id === 'q') { S.q = e.target.value; renderResultados(); }
+  });
+
+  reset(); render();
+})();
+</script>
+</body></html>
