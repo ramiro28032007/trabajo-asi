@@ -43,4 +43,4 @@ rectangle Retirosteam {
 CU1 - Registrar retiro
 Descripción: https://docs.google.com/document/d/1FMR0BfR8PTAoek7NXc87XRdBAOyJsIwPccI3qKMqkKg/edit?usp=sharing
 CU2 - Consultar retiro
-Descripción: 
+Descripción: https://docs.google.com/document/d/1uLfhOjABPpogpQAiuhfvqmURnWw_Dp421zBpoYpGVjE/edit?usp=sharing
