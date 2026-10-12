@@ -110,6 +110,3 @@ note top of EstadoRetiro : Inactivo\nActivo\npagoPendiente\nseñado\npagado
 note top of GeneroGrupo : hombres\nmujeres\nmixto
 
 @enduml
-note top of Notificacion : Los métodos de esta clase\n se extienden a todo el diagrama
-
-@enduml
