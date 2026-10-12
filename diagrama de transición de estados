@@ -1,0 +1,17 @@
+@startuml
+[*] --> Inactivo : registrar()
+
+Inactivo --> Activo : darAlta()
+
+Activo --> PagoPendiente : iniciarRetiro()
+
+PagoPendiente --> Pagado : generarPago()
+
+Activo --> Inactivo : cancelarRetiro()
+PagoPendiente --> Inactivo : cancelarRetiro()
+
+Pagado --> Inactivo
+Inactivo --> [*]
+
+state "Pago pendiente" as PagoPendiente
+@enduml
